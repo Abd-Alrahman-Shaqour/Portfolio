@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LivaatVerse - Abd Alrhaman Shaqour</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #1a1a1a;
+            --accent-primary: #00d4aa;
+            --accent-glow: rgba(0, 212, 170, 0.3);
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --font-display: 'Orbitron', monospace;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--bg-secondary);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        .back-btn {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Project Header */
+        .project-header {
+            padding: 120px 24px 60px;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            text-align: center;
+        }
+
+        .project-header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--text-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .meta-item {
+            background: var(--bg-secondary);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .meta-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .meta-value {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+
+        /* Project Content */
+        .project-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .content-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 24px;
+        }
+
+        .section-content {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Contributions Grid */
+        .contributions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .contribution-card {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .contribution-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+        }
+
+        .contribution-title {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 12px;
+        }
+
+        .contribution-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Technical Details */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .tech-category {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .tech-title {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 16px;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .tech-list li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .gallery-item {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #333, #555);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .gallery-caption {
+            padding: 16px;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 40px 24px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .contributions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Abd Alrhaman Shaqour</a>
+            <a href="index.html#projects" class="back-btn">← Back to Projects</a>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="project-header-container">
+            <h1 class="project-title">LivaatVerse</h1>
+            <p class="project-subtitle">Social VR Platform for Virtual Events and Meetings</p>
+            
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Studio</div>
+                    <div class="meta-value">UBitc Group</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value">Lead Developer</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Engine</div>
+                    <div class="meta-value">Unity</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Duration</div>
+                    <div class="meta-value">8 Months</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Team Size</div>
+                    <div class="meta-value">12 Developers</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Platform</div>
+                    <div class="meta-value">VR & Desktop</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <main class="project-content">
+        <!-- Project Overview -->
+        <section class="content-section">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="section-content">
+                <p>
+                    LivaatVerse is a comprehensive social VR platform designed for virtual events, meetings, and social gatherings. The platform enables users to create customizable avatars, interact in immersive 3D environments, and participate in various virtual activities ranging from business conferences to social events.
+                </p>
+                <p>
+                    As Lead Developer, I was responsible for the overall technical architecture, multiplayer systems, and leading a team of 12 developers. The project required innovative solutions for scalable multiplayer networking, cross-platform compatibility, and creating engaging social interactions in VR.
+                </p>
+            </div>
+        </section>
+
+        <!-- My Contributions -->
+        <section class="content-section">
+            <h2 class="section-title">My Contributions</h2>
+            <div class="contributions-grid">
+                <div class="contribution-card">
+                    <h3 class="contribution-title">Technical Architecture Leadership</h3>
+                    <p class="contribution-description">
+                        Led the design and implementation of the entire technical architecture. Established coding standards, development workflows, and integration processes. Made key decisions on technology stack and system design that ensured scalability and maintainability.
+                    </p>
+                </div>
+
+                <div class="contribution-card">
+                    <h3 class="contribution-title">Scalable Multiplayer Systems</h3>
+                    <p class="contribution-description">
+                        Designed and implemented a scalable multiplayer architecture using Photon Pun that could support hundreds of concurrent users. Created room management systems, load balancing, and region-based server allocation for optimal performance.
+                    </p>
+                </div>
+
+                <div class="contribution-card">
+                    <h3 class="contribution-title">Avatar Customization System</h3>
+                    <p class="contribution-description">
+                        Developed a comprehensive avatar customization system allowing users to create unique virtual identities. Implemented modular avatar components, clothing systems, and real-time synchronization of avatar appearances across all clients.
+                    </p>
+                </div>
+
+                <div class="contribution-card">
+                    <h3 class="contribution-title">Voice Chat Integration</h3>
+                    <p class="contribution-description">
+                        Integrated spatial voice chat with real-time audio processing. Implemented voice zones, echo cancellation, and audio effects that enhanced the social experience and made conversations feel natural in 3D space.
+                    </p>
+                </div>
+
+                <div class="contribution-card">
+                    <h3 class="contribution-title">Cross-Platform Compatibility</h3>
+                    <p class="contribution-description">
+                        Ensured seamless experience across VR headsets, desktop, and mobile platforms. Developed adaptive UI systems, input handling, and performance optimization techniques for each platform while maintaining feature parity.
+                    </p>
+                </div>
+
+                <div class="contribution-card">
+                    <h3 class="contribution-title">Team Leadership & Mentoring</h3>
+                    <p class="contribution-description">
+                        Led a team of 12 developers including programmers, artists, and designers. Conducted code reviews, provided technical guidance, and mentored junior developers. Established agile development practices and sprint planning processes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="content-section">
+            <h2 class="section-title">Technical Implementation</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3 class="tech-title">Core Technologies</h3>
+                    <ul class="tech-list">
+                        <li>Unity 2021.3 LTS</li>
+                        <li>Photon Pun 2 SDK</li>
+                        <li>Vivox Voice Chat</li>
+                        <li>Unity Cloud Services</li>
+                        <li>C# .NET 4.8</li>
+                    </ul>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-title">VR & Platform Support</h3>
+                    <ul class="tech-list">
+                        <li>Oculus Quest/Quest 2</li>
+                        <li>HTC Vive/Pro</li>
+                        <li>Windows Desktop</li>
+                        <li>MacOS Support</li>
+                        <li>Mobile VR (Cardboard)</li>
+                    </ul>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-title">Networking Features</h3>
+                    <ul class="tech-list">
+                        <li>Scalable room management</li>
+                        <li>Region-based servers</li>
+                        <li>Load balancing systems</li>
+                        <li>Connection resilience</li>
+                        <li>Bandwidth optimization</li>
+                    </ul>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-title">Social Features</h3>
+                    <ul class="tech-list">
+                        <li>Spatial voice chat</li>
+                        <li>Avatar customization</li>
+                        <li>Friend systems</li>
+                        <li>Event scheduling</li>
+                        <li>Emote and gesture systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges and Solutions -->
+        <section class="content-section">
+            <h2 class="section-title">Challenges & Solutions</h2>
+            <div class="section-content">
+                <p>
+                    <strong>Challenge:</strong> Scaling multiplayer sessions to support hundreds of users while maintaining real-time interactions and voice chat quality.
+                </p>
+                <p>
+                    <strong>Solution:</strong> Implemented a distributed server architecture with intelligent load balancing. Created room-based partitioning systems and used Photon Cloud's scaling features to handle increased user loads without performance degradation.
+                </p>
+                <br>
+                <p>
+                    <strong>Challenge:</strong> Creating consistent user experience across vastly different platforms (VR, desktop, mobile) with different input methods and performance capabilities.
+                </p>
+                <p>
+                    <strong>Solution:</strong> Developed adaptive systems that scaled features based on platform capabilities. Created platform-specific UI layouts and input handling while maintaining core functionality across all devices.
+                </p>
+                <br>
+                <p>
+                    <strong>Challenge:</strong> Managing a large development team while maintaining code quality and meeting tight deadlines.
+                </p>
+                <p>
+                    <strong>Solution:</strong> Implemented agile development practices with weekly sprints, daily standups, and code review processes. Established clear communication channels and documentation standards that improved team productivity.
+                </p>
+            </div>
+        </section>
+
+        <!-- Results -->
+        <section class="content-section">
+            <h2 class="section-title">Results & Impact</h2>
+            <div class="section-content">
+                <p>
+                    LivaatVerse successfully launched and became a popular platform for virtual events in the Middle East region. The platform hosted over 200 virtual events in its first year and gained a user base of 15,000+ active users.
+                </p>
+                <p>
+                    Key achievements include:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 20px; margin-top: 16px;">
+                    <li>Successfully scaled to support 500+ concurrent users</li>
+                    <li>99.8% uptime over 12 months of operation</li>
+                    <li>4.2/5 average user rating across platforms</li>
+                    <li>Featured in 3 major tech publications</li>
+                    <li>Expanded to support enterprise clients and educational institutions</li>
+                    <li>Team productivity increased by 40% through improved processes</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Image Gallery -->
+        <section class="content-section">
+            <h2 class="section-title">Gallery</h2>
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        Avatar Customization
+                    </div>
+                    <div class="gallery-caption">
+                        Comprehensive avatar creation and customization interface
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        Virtual Event Space
+                    </div>
+                    <div class="gallery-caption">
+                        Large-scale virtual conference with multiple participants
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        Social Interaction
+                    </div>
+                    <div class="gallery-caption">
+                        Users interacting in immersive 3D environments
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Abd Alrhaman Shaqour. Crafted with passion for game development.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate contribution cards on scroll
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.contribution-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
