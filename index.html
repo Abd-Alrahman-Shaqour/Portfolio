@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Abd Alrhaman Shaqour - Game Developer</title>
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
     
     <!-- Core Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.js"></script>
-    <link href="https://unpkg.com/splitting@1.0.6/dist/splitting.css" rel="stylesheet">
+    <link href="https://unpkg.com/splitting@1.0.6/dist/splitting.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
     
     <style>
@@ -427,10 +425,9 @@
 
         /* About Section */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
+            display: flex;
+            flex-direction: column;
             gap: 48px;
-            align-items: center;
         }
 
         .about-text {
@@ -610,7 +607,7 @@
             100% { transform: rotate(360deg); }
         }
     </style>
-</head>
+<script src="https://statics.moonshot.cn/sdk/preview-widgets.min.js" defer=""></script></head>
 <body>
     <!-- Loading Screen -->
     <div class="loading" id="loading">
@@ -643,11 +640,11 @@
                 <div class="superpower-text" id="superpowerText"></div>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">3+</span>
+                        <span class="stat-number">4+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">5+</span>
+                        <span class="stat-number">10+</span>
                         <span class="stat-label">Shipped Games</span>
                     </div>
                     <div class="stat-item">
@@ -656,92 +653,211 @@
                     </div>
                 </div>
             </div>
-            <img src="avatar.png" alt="Abd Alrhaman Shaqour" class="hero-avatar">
+            <img src="avatar.png" alt="Abd Alrhaman Shaqour" class="hero-avatar"/>
+        </div>
+    </section>
+
+    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">ABOUT</h2>
+        <div class="about-content fade-in">
+            <div class="about-text">
+                <p class="quote">
+                    “Games are fiction. But I think games are also the only medium that lets you experience the feeling of ‘I did this.’”
+                    <br>— <strong>Yoko Taro</strong>
+                </p>
+                <p>
+                    Game design, for me, has always been about giving players agency — not just to play, but to feel ownership over their actions and discoveries. I’m drawn to experiences that reward curiosity and build emotional connection through play.
+                </p>
+                <p>
+                    I work as a Unity Team Lead, Game Designer, and Director, building 2D and 3D games across genres — from multiplayer systems to story-driven platformers. Along the way, I’ve shipped titles on the App Store and Google Play, directed original projects, and participated in game jams that pushed creative boundaries.
+                </p>
+                <p>
+                    What drives me is the space where mechanics and story meet — where a system can tell a story without a single line of dialogue. Creators like Yoko Taro and Hidetaka Miyazaki inspire me to craft meaning through discovery rather than exposition.
+                </p>
+                <p>
+                    I’ve also worked in community and esports roles with Riot Games, learning how players engage beyond the screen — and how important it is to design for them, not just at them. Right now, I’m focused on building thoughtful, player-first experiences with teams that care about both craft and community.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
-        <h2 class="section-title">PROJECTS</h2>
-        <div class="projects-grid fade-in">
-            <a href="lvcc.html" class="project-card">
-                <div class="project-header">
-                    <div>
-                        <h3 class="project-title">LVCC Virtual Experience</h3>
-                        <p class="project-company">UBitc Group • Game Developer</p>
-                    </div>
-                    <span class="project-type">Professional</span>
+   <section id="projects" class="section">
+    <h2 class="section-title">PROJECTS</h2>
+    <div class="projects-grid fade-in">
+        <!-- BeeLabs Projects -->
+        <a href="lunaverse.html" class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3 class="project-title">Lunaverse</h3>
+                    <p class="project-company">BeeLabs</p>
                 </div>
-                <div class="project-tools">
-                    <span class="tool-tag">Unity</span>
-                    <span class="tool-tag">Photon Fusion</span>
-                    <span class="tool-tag">VR</span>
-                    <span class="tool-tag">Multiplayer</span>
-                </div>
-                <p class="project-description">
-                    Immersive multiplayer VR experience for architectural visualization with real-time collaboration features. Built for client presentations and virtual walkthroughs.
-                </p>
-            </a>
+                <span class="project-type">Professional</span>
+            </div>
+            <div class="project-tools">
+                <span class="tool-tag">Game Design</span>
+                <span class="tool-tag">Character/Enemy Design</span>
+                <span class="tool-tag">Level & Puzzle Design</span>
+                <span class="tool-tag">Client Collaboration</span>
+            </div>
+            <p class="project-description">
+                Narrative puzzle-platformer, designed in close collaboration with client.
+            </p>
+        </a>
 
-            <a href="livaatverse.html" class="project-card">
-                <div class="project-header">
-                    <div>
-                        <h3 class="project-title">LivaatVerse</h3>
-                        <p class="project-company">UBitc Group • Lead Developer</p>
-                    </div>
-                    <span class="project-type">Professional</span>
+        <a href="habed.html" class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3 class="project-title">Habed Multiplayer Trivia Game</h3>
+                    <p class="project-company">BeeLabs</p>
                 </div>
-                <div class="project-tools">
-                    <span class="tool-tag">Unity</span>
-                    <span class="tool-tag">Photon Pun</span>
-                    <span class="tool-tag">VR</span>
-                    <span class="tool-tag">Social</span>
-                </div>
-                <p class="project-description">
-                    Social VR platform with customizable avatars, voice chat, and interactive environments for virtual events and meetings.
-                </p>
-            </a>
+                <span class="project-type">Professional</span>
+            </div>
+            <div class="project-tools">
+                <span class="tool-tag">Debugging</span>
+                <span class="tool-tag">UI/UX</span>
+                <span class="tool-tag">Optimization</span>
+                <span class="tool-tag">Publishing</span>
+            </div>
+            <p class="project-description">
+                Cross-platform trivia game published on iOS/Android.
+            </p>
+        </a>
 
-            <a href="aljazeera.html" class="project-card">
-                <div class="project-header">
-                    <div>
-                        <h3 class="project-title">Al Jazeera Paints Virtual Experience</h3>
-                        <p class="project-company">UBitc Group • Senior Developer</p>
-                    </div>
-                    <span class="project-type">Professional</span>
+        <a href="nyu-vr.html" class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3 class="project-title">NYU Abu Dhabi VR Project</h3>
+                    <p class="project-company">BeeLabs</p>
                 </div>
-                <div class="project-tools">
-                    <span class="tool-tag">Unity</span>
-                    <span class="tool-tag">AWS</span>
-                    <span class="tool-tag">.NET</span>
-                    <span class="tool-tag">WebGL</span>
-                </div>
-                <p class="project-description">
-                    Interactive product visualization tool allowing customers to preview paint colors in virtual rooms before purchase.
-                </p>
-            </a>
+                <span class="project-type">Professional</span>
+            </div>
+            <div class="project-tools">
+                <span class="tool-tag">Game Design</span>
+                <span class="tool-tag">Level Design</span>
+                <span class="tool-tag">Interaction Design</span>
+            </div>
+            <p class="project-description">
+                VR educational experience enhancing learning engagement.
+            </p>
+        </a>
 
-            <a href="narrative-games.html" class="project-card">
-                <div class="project-header">
-                    <div>
-                        <h3 class="project-title">Narrative-Driven Mobile Games</h3>
-                        <p class="project-company">BeeLabs • Game Development Lead</p>
-                    </div>
-                    <span class="project-type">Professional</span>
+        <a href="mirinda-vr.html" class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3 class="project-title">Mirinda VR Cutting Game</h3>
+                    <p class="project-company">BeeLabs</p>
                 </div>
-                <div class="project-tools">
-                    <span class="tool-tag">Unity</span>
-                    <span class="tool-tag">Mobile</span>
-                    <span class="tool-tag">Narrative Design</span>
-                    <span class="tool-tag">Team Lead</span>
-                </div>
-                <p class="project-description">
-                    Leading development of story-rich mobile games with focus on world-building and player choice mechanics across multiple genres.
-                </p>
-            </a>
-        </div>
-    </section>
+                <span class="project-type">Professional</span>
+            </div>
+            <div class="project-tools">
+                <span class="tool-tag">Full Development</span>
+                <span class="tool-tag">Game Design</span>
+                <span class="tool-tag">VR Interaction Design</span>
+                <span class="tool-tag">Polish</span>
+            </div>
+            <p class="project-description">
+                Created a branded VR game inspired by Fruit Ninja for Mirinda, delivering a polished interactive experience.
+            </p>
+        </a>
 
+        <a href="2121.html" class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3 class="project-title">2121</h3>
+                    <p class="project-company">BeeLabs</p>
+                </div>
+                <span class="project-type">Professional</span>
+            </div>
+            <div class="project-tools">
+                <span class="tool-tag">UI/UX Updates</span>
+                <span class="tool-tag">Code Restructuring</span>
+                <span class="tool-tag">Maintenance</span>
+                <span class="tool-tag">Multi-Language Support</span>
+            </div>
+            <p class="project-description">
+                Multiplayer educational game designed to foster civic literacy and active citizenship among youth worldwide.
+            </p>
+        </a>
+         <a href="jarabee3-world.html" class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3 class="project-title">Jarabee3 World</h3>
+                    <p class="project-company">BeeLabs</p>
+                </div>
+                <span class="project-type">Professional</span>
+            </div>
+            <div class="project-tools">
+                <span class="tool-tag">Project Direction</span>
+                <span class="tool-tag">Client Communication</span>
+                <span class="tool-tag">Game Design</span>
+                <span class="tool-tag">Narrative Integration</span>
+                <span class="tool-tag">Team Coordination</span>
+            </div>
+            <p class="project-description">
+                Directed the development of a 3D endless runner inspired by Crash Bandicoot, designed to teach Arabic through interactive gameplay, music, and storytelling.
+            </p>
+        </a>
+          <!-- UBitc Projects -->
+        <a href="livaatverse.html" class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3 class="project-title">LivaatVerse</h3>
+                    <p class="project-company">UBitc Group</p>
+                </div>
+                <span class="project-type">Professional</span>
+            </div>
+            <div class="project-tools">
+                <span class="tool-tag">Multiplayer Systems</span>
+                <span class="tool-tag">Level Design</span>
+                <span class="tool-tag">Optimization</span>
+                <span class="tool-tag">UI/UX</span>
+            </div>
+            <p class="project-description">
+                Metaverse experience for education, tourism, and racing.
+            </p>
+        </a>
+
+        <a href="lvcc.html" class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3 class="project-title">LVCC Virtual Experience</h3>
+                    <p class="project-company">UBitc Group</p>
+                </div>
+                <span class="project-type">Professional</span>
+            </div>
+            <div class="project-tools">
+                <span class="tool-tag">Multiplayer Booths</span>
+                <span class="tool-tag">Speaker Systems</span>
+                <span class="tool-tag">API Integration</span>
+            </div>
+            <p class="project-description">
+                Digital conference platform with customizable avatars and interactive booths.
+            </p>
+        </a>
+
+        <a href="aljazeera.html" class="project-card">
+            <div class="project-header">
+                <div>
+                    <h3 class="project-title">JAZEERA PAINTS VIRTUAL EXPERIENCE</h3>
+                    <p class="project-company">UBitc Group</p>
+                </div>
+                <span class="project-type">Professional</span>
+            </div>
+            <div class="project-tools">
+                <span class="tool-tag">Gameplay</span>
+                <span class="tool-tag">Shop System</span>
+                <span class="tool-tag">UI/UX</span>
+                <span class="tool-tag">API Integration</span>
+            </div>
+            <p class="project-description">
+                Virtual shopping experience with paint and texture previews.
+            </p>
+        </a>
+    </div>
+</section>
     <!-- My Journey Section -->
     <section id="journey" class="section">
         <h2 class="section-title">MY JOURNEY</h2>
@@ -781,10 +897,10 @@
 
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3 class="timeline-title">Bachelor's Degree, Computer Science</h3>
+                    <h3 class="timeline-title">Bachelor&#39;s Degree, Computer Science</h3>
                     <p class="timeline-company">Al-Hussein Bin Talal University • 2018 - 2021</p>
                     <p class="timeline-description">
-                        Led graduation project development, organized campus events, and completed various online courses including Harvard's CS50. Specialized in game development and software engineering.
+                        Led graduation project development, organized campus events, and completed various online courses including Harvard&#39;s CS50. Specialized in game development and software engineering.
                     </p>
                 </div>
                 <div class="timeline-badge"></div>
@@ -837,7 +953,7 @@
 
             <div class="quest-card">
                 <div class="quest-icon">🎯</div>
-                <h3 class="quest-title">Unity Workshops & Mentoring</h3>
+                <h3 class="quest-title">Unity Workshops &amp; Mentoring</h3>
                 <p class="quest-description">
                     Led Unity workshops and mentored junior developers in game development fundamentals. Shared knowledge on multiplayer programming, VR development, and best practices.
                 </p>
@@ -851,20 +967,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
-        <h2 class="section-title">ABOUT</h2>
-        <div class="about-content fade-in">
-            <div class="about-text">
-                <p>
-                    I'm a passionate game developer with 3+ years of professional experience in Unity, specializing in mobile, VR, multiplayer, and narrative-driven projects. My journey began with a Computer Science degree and has evolved through hands-on experience at multiple game studios.
-                </p>
-                <p>
-                    I believe in creating games that not only entertain but also bring people together. Whether it's building immersive VR experiences, developing multiplayer systems, or crafting compelling narratives, I'm always pushing the boundaries of what's possible in game development.
-                </p>
-                <p>
-                    When I'm not coding, you'll find me participating in game jams, mentoring aspiring developers, or staying active in the esports community. I'm always eager to take on new challenges and collaborate with talented teams to create memorable gaming experiences.
-                </p>
-            </div>
+    <section id="contact-info" class="section">
             <div class="contact-info">
                 <h3 style="font-family: var(--font-display); color: var(--accent-primary); margin-bottom: 24px;">Get In Touch</h3>
                 <div class="contact-item">
@@ -883,7 +986,7 @@
                     <span class="contact-icon">💼</span>
                     <span>Available for opportunities</span>
                 </div>
-                <a href="Abd alrhaman shaqour.pdf" class="btn btn-full" download>
+                <a href="Abd alrhaman shaqour.pdf" class="btn btn-full" download="">
                     📄 Download Resume
                 </a>
                 <a href="https://slysyntax.itch.io/" class="btn btn-full" target="_blank">
@@ -895,7 +998,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Abd Alrhaman Shaqour. Crafted with passion for game development.</p>
+        <p>© 2024 Abd Alrhaman Shaqour. Crafted with passion for game development.</p>
     </footer>
 
     <script>
@@ -927,10 +1030,11 @@
         // Typewriter effect for hero
         function initializeTypewriter() {
             const phrases = [
-                "Unity Expert + Multiplayer Architect",
-                "VR Experience Designer",
-                "Team Leader & Game Visionary",
-                "3+ Years Shipping Games"
+                "Game Director & Unity Technical Lead",
+                "Multiplayer and Systems Design Specialist",
+                "VR and Mobile Game Developer",
+                "Gamer at Heart, Developer by Trade",
+                "3+ Years Building and Leading Games"
             ];
 
             new Typed('#superpowerText', {
@@ -1067,5 +1171,5 @@
             });
         });
     </script>
-</body>
-</html>
+
+</body></html>
